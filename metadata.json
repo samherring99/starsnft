@@ -1,0 +1,8 @@
+{
+  "name": "Stars",
+  "description": "500 total 56px x 56px Stars will live on the blockchain.",
+  "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/coverimage.png",
+  "external_link": "https://starsnft.herokuapp.com/",
+  "seller_fee_basis_points": 250,
+  "fee_recipient": "0x66449A3015488DA72976DCff99C6A75Bf94aAfda"
+}
