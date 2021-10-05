@@ -52,9 +52,13 @@ Within the attributes, there are also rarities, like:
     - Body - All 25%
     - etc.
     
-Attributes can also have rarities dependent on the <b> Gender </b> attribute, like how female Stars can have earrings or lipstick on their mouths.
+Attributes can also have rarities dependent on the <b> Gender </b> attribute, like how female Stars can have earrings or lipstick on their mouths. Attribute rarities and the code for assigning attributes to specific genders or other attribute instances can be found in the <i> generate.rb </i>  file.
 
-Once you have your attributes planned out, open the PNG image editing tool of your choice (GIMP is free and works perfectly for this use case), and create a blank canvas or project of size 56 pixels by 56 pixels. It's time to start drawing assets! After you've finished, export all of your .png files to the 'parts' directory, with subfolders for each attribute just like how the example is set up. <b> Don't forget to make the background transparent when exporting. </b>
+Once you have your attributes planned out, it's time to start drawing assets! 
+
+Open the PNG image editing tool of your choice (GIMP is free and works perfectly for this use case), and create a blank canvas or project of size 56 pixels by 56 pixels. 
+
+After you've finished, export all of your .png files to the 'parts' directory, with subfolders for each attribute just like how the example is set up. <b> Don't forget to make the background transparent when exporting. </b>
 
 ### Step 2
 
