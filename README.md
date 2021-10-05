@@ -16,7 +16,7 @@ This repository contains a real example of the workflow for:
 - [Remix](https://remix.ethereum.org/)(Online), or [Truffle](https://www.trufflesuite.com/truffle)(CLI) for deployment and minting.
 
 ## Notes Before Using This Code
--  If you want to create AND HOST your own NFT set using this code: FORK THIS REPOSITORY.
+-  If you want to create AND HOST your own NFT set here using this code: FORK THIS REPOSITORY.
 -  If you want to create your own NFT set and NOT host it here, or if you simply just want to experiment:  CLONE THIS REPOSITORY.
 
 ## Usage
