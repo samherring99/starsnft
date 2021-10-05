@@ -1,6 +1,6 @@
 {
   "id": 466,
-  "description": "This star, Star 467, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 467, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-467x6.png",
   "name": "Star 467",
@@ -11,15 +11,15 @@
     },
     {
       "trait_type": "Background",
-      "value": "Orange"
+      "value": "Green"
     },
     {
       "trait_type": "Body",
-      "value": "Body 1"
+      "value": "Body 4"
     },
     {
       "trait_type": "Mouth",
-      "value": "Zombie Mouth"
+      "value": "Black Open"
     },
     {
       "trait_type": "Nose",
@@ -34,8 +34,12 @@
       "value": "Black"
     },
     {
+      "trait_type": "Socks",
+      "value": "White Socks"
+    },
+    {
       "trait_type": "Hat",
-      "value": "Cowboy Hat"
+      "value": "Blue Cap"
     }
   ]
 }

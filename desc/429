@@ -1,6 +1,6 @@
 {
   "id": 429,
-  "description": "This star, Star 430, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 430, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-430x6.png",
   "name": "Star 430",
@@ -11,11 +11,11 @@
     },
     {
       "trait_type": "Background",
-      "value": "Purple"
+      "value": "Orange"
     },
     {
       "trait_type": "Body",
-      "value": "Body 5"
+      "value": "Body 4"
     },
     {
       "trait_type": "Mouth",
@@ -27,7 +27,7 @@
     },
     {
       "trait_type": "Eyes",
-      "value": "Eyes 2"
+      "value": "Eyes 1"
     },
     {
       "trait_type": "Shoes",
@@ -38,8 +38,12 @@
       "value": "Black Socks"
     },
     {
+      "trait_type": "Hat",
+      "value": "Red Cap"
+    },
+    {
       "trait_type": "Accessories",
-      "value": "Glasses"
+      "value": "Sunglasses"
     }
   ]
 }

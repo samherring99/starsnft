@@ -1,17 +1,17 @@
 {
   "id": 107,
-  "description": "This star, Star 108, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 108, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-108x6.png",
   "name": "Star 108",
   "attributes": [
     {
       "trait_type": "Gender",
-      "value": "Female"
+      "value": "Male"
     },
     {
       "trait_type": "Background",
-      "value": "Orange"
+      "value": "Blue"
     },
     {
       "trait_type": "Body",
@@ -19,19 +19,19 @@
     },
     {
       "trait_type": "Mouth",
-      "value": "Black Smile"
+      "value": "Black Open"
     },
     {
       "trait_type": "Nose",
-      "value": "Nose 3"
+      "value": "Nose 1"
     },
     {
       "trait_type": "Eyes",
-      "value": "Eyes 2"
+      "value": "Eyes 1"
     },
     {
       "trait_type": "Shoes",
-      "value": "Black"
+      "value": "Blue Converse"
     },
     {
       "trait_type": "Socks",
@@ -39,7 +39,7 @@
     },
     {
       "trait_type": "Hat",
-      "value": "Cowboy Hat"
+      "value": "Blue Cap"
     }
   ]
 }

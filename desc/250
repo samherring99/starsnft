@@ -1,6 +1,6 @@
 {
   "id": 250,
-  "description": "This star, Star 251, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 251, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-251x6.png",
   "name": "Star 251",
@@ -15,19 +15,19 @@
     },
     {
       "trait_type": "Body",
-      "value": "Body 1"
+      "value": "Body 3"
     },
     {
       "trait_type": "Mouth",
-      "value": "Zombie Mouth"
+      "value": "Black Smile"
     },
     {
       "trait_type": "Nose",
-      "value": "Nose 4"
+      "value": "Nose 1"
     },
     {
       "trait_type": "Eyes",
-      "value": "Eyes 2"
+      "value": "Eyes 1"
     },
     {
       "trait_type": "Shoes",
@@ -35,7 +35,7 @@
     },
     {
       "trait_type": "Socks",
-      "value": "Black Socks"
+      "value": "White Socks"
     }
   ]
 }

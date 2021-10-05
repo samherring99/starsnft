@@ -1,25 +1,25 @@
 {
   "id": 320,
-  "description": "This star, Star 321, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 321, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-321x6.png",
   "name": "Star 321",
   "attributes": [
     {
       "trait_type": "Gender",
-      "value": "Female"
+      "value": "Male"
     },
     {
       "trait_type": "Background",
-      "value": "Green"
+      "value": "Blue"
     },
     {
       "trait_type": "Body",
-      "value": "Body 1"
+      "value": "Body 3"
     },
     {
       "trait_type": "Mouth",
-      "value": "Black Smile"
+      "value": "Tongue Out"
     },
     {
       "trait_type": "Nose",
@@ -31,11 +31,11 @@
     },
     {
       "trait_type": "Shoes",
-      "value": "Red Converse"
+      "value": "Black"
     },
     {
-      "trait_type": "Socks",
-      "value": "Black Socks"
+      "trait_type": "Hat",
+      "value": "Red Cap"
     }
   ]
 }

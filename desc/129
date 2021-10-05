@@ -1,13 +1,13 @@
 {
   "id": 129,
-  "description": "This star, Star 130, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 130, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-130x6.png",
   "name": "Star 130",
   "attributes": [
     {
       "trait_type": "Gender",
-      "value": "Female"
+      "value": "Male"
     },
     {
       "trait_type": "Background",
@@ -15,15 +15,15 @@
     },
     {
       "trait_type": "Body",
-      "value": "Body 1"
+      "value": "Body 5"
     },
     {
       "trait_type": "Mouth",
-      "value": "Red Smile"
+      "value": "Black Open"
     },
     {
       "trait_type": "Nose",
-      "value": "Nose 2"
+      "value": "Nose 1"
     },
     {
       "trait_type": "Eyes",
@@ -31,11 +31,19 @@
     },
     {
       "trait_type": "Shoes",
-      "value": "Black"
+      "value": "Blue Converse"
+    },
+    {
+      "trait_type": "Socks",
+      "value": "White Socks"
     },
     {
       "trait_type": "Hat",
-      "value": "Red Cap"
+      "value": "Camp Cap"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Sunglasses"
     }
   ]
 }

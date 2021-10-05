@@ -1,25 +1,25 @@
 {
   "id": 365,
-  "description": "This star, Star 366, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 366, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-366x6.png",
   "name": "Star 366",
   "attributes": [
     {
       "trait_type": "Gender",
-      "value": "Female"
+      "value": "Male"
     },
     {
       "trait_type": "Background",
-      "value": "Green"
+      "value": "Blue"
     },
     {
       "trait_type": "Body",
-      "value": "Body 4"
+      "value": "Body 1"
     },
     {
       "trait_type": "Mouth",
-      "value": "Purple Smile"
+      "value": "Tongue Out"
     },
     {
       "trait_type": "Nose",
@@ -40,6 +40,10 @@
     {
       "trait_type": "Hat",
       "value": "Blue Cap"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Glasses"
     }
   ]
 }

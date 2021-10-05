@@ -1,6 +1,6 @@
 {
   "id": 454,
-  "description": "This star, Star 455, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 455, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-455x6.png",
   "name": "Star 455",
@@ -11,11 +11,11 @@
     },
     {
       "trait_type": "Background",
-      "value": "Blue"
+      "value": "Green"
     },
     {
       "trait_type": "Body",
-      "value": "Body 5"
+      "value": "Body 2"
     },
     {
       "trait_type": "Mouth",
@@ -35,11 +35,7 @@
     },
     {
       "trait_type": "Socks",
-      "value": "White Socks"
-    },
-    {
-      "trait_type": "Hat",
-      "value": "Camp Cap"
+      "value": "Rainbow Socks"
     }
   ]
 }

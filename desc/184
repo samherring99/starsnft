@@ -1,13 +1,13 @@
 {
   "id": 184,
-  "description": "This star, Star 185, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+  "description": "This star, Star 185, is a unique Star in the set of 471 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
   "external_url": "https://starsnft.herokuapp.com/",
   "image": "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-185x6.png",
   "name": "Star 185",
   "attributes": [
     {
       "trait_type": "Gender",
-      "value": "Male"
+      "value": "Female"
     },
     {
       "trait_type": "Background",
@@ -19,7 +19,7 @@
     },
     {
       "trait_type": "Mouth",
-      "value": "Black Open"
+      "value": "Red Smile"
     },
     {
       "trait_type": "Nose",
@@ -32,6 +32,14 @@
     {
       "trait_type": "Shoes",
       "value": "Black"
+    },
+    {
+      "trait_type": "Socks",
+      "value": "Black Socks"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Glasses"
     }
   ]
 }
