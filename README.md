@@ -26,9 +26,35 @@ Once dependencies are all installed, enter the <i> starsnft </i> directory with 
 ### Step 1: Creating Attributes
 
 ![Part1](/parts/bg/bg1.png) ![Part2](/parts/body/body3.png) ![Part3](/parts/eyes/eyes4.png) ![Part4](/parts/mouth/mouth3.png)
-![Part5](/parts/hat/hat1.png) ![Part6](/parts/socks/socks2.png) ![Part7](/parts/shoes/shoes4.png) ![Part8](/parts/accessories/accessories4.png) ![Part9](/parts/nose/nose1.png)
+![Part5](/parts/hat/hat1.png) ![Part6](/parts/socks/socks2.png) ![Part7](/parts/shoes/shoes4.png) ![Part8](/parts/accessories/accessories4.png) ![Part9](/parts/nose/nose2.png)
 
-Ideas, create directories in 'parts' like example.
+(OPTIONAL) Run cleaning script <i> bash clean.sh </i> to empty directories and give you a fresh project to work with.
+
+The first step to creating a set of generated NFT avatars with tiered rarity structure is coming up with A.  a list of attributes and B. their rarities within the collection.  For example, the above set of images shows the attributes for the Stars NFT Collection. Listed out,  these attributes are:
+
+    - Gender
+    - Background
+    - Body
+    - Eyes
+    - Mouth
+    - Nose
+    - Shoes
+    - Hat (optional)
+    - Socks (optional)
+    - Accessories (optional)
+    
+For each 'optional'  attribute, there are rarities for these attributes to occur such as a Hat being 30% likely to appear, Socks being 40% likely to appear and a 20% chance of having an Accessory.
+
+Within the attributes, there are also rarities, like:
+
+    - Gender - 70% male, 30% female
+    - Background - 60% (red, orange, yellow), 25% (green, blue), 15% (yellow)
+    - Body - All 25%
+    - etc.
+    
+Attributes can also have rarities dependent on the <b> Gender </b> attribute, like how female Stars can have earrings or lipstick on their mouths.
+
+Once you have your attributes planned out, open the PNG image editing tool of your choice (GIMP is free and works perfectly for this use case), and create a blank canvas or project of size 56 pixels by 56 pixels. It's time to start drawing assets! After you've finished, export all of your .png files to the 'parts' directory, with subfolders for each attribute just like how the example is set up. <b> Don't forget to make the background transparent when exporting. </b>
 
 ### Step 2
 
