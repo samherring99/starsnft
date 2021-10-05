@@ -1,0 +1,13 @@
+{
+  "tokens": [
+
+  ],
+  "metadata": {
+    "name": "Starboys",
+    "description": "Starboys are unique characters and are fun and cool and interesting.",
+    "image": "https://gateway.pinata.cloud/ipfs/QmXWDbSAvbGRuwUEEpegRRbFGegoxdSeKBJVV5TbGX6W6y/star-11x6.png",
+    "external_link": "https://google.com",
+    "seller_fee_basis_points": 250,
+    "fee_recipient": "0x66449A3015488DA72976DCff99C6A75Bf94aAfda"
+  }
+}
