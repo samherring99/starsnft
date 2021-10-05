@@ -420,7 +420,7 @@ totalrange.each_with_index do |index|
             "id" => counter - 1,
             "description" => "This star, Star #{counter}, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
             "external_url" => "https://starsnft.herokuapp.com/",
-            "image" => "https://raw.githubusercontent.com/samherring99/starsnft/master/images/star-#{counter}x6.png",
+            "image" => "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-#{counter}x6.png",
             "name" => "Star " + "#{counter}",
             "attributes" => [
             {
