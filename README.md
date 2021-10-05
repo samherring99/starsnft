@@ -1,6 +1,6 @@
 # Stars NFT Generation and Data Hosting
 
-Description
+![Cover](/coverimage.png)
 
 ## Requirements
 - Link GIMP, Ruby,  Remix
