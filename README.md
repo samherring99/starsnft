@@ -26,7 +26,7 @@ Once dependencies are all installed, enter the <i> starsnft </i> directory with 
 ### Step 1: Creating Attributes
 
 ![Part1](/parts/bg/bg1.png) ![Part2](/parts/body/body3.png) ![Part3](/parts/eyes/eyes4.png) ![Part4](/parts/mouth/mouth3.png)
-![Part5](/parts/hat/hat1.png) ![Part6](/parts/socks/socks2.png) ![Part7](/parts/shoes/shoes4.png) ![Part8](/parts/accessories/accessories4.png)
+![Part5](/parts/hat/hat1.png) ![Part6](/parts/socks/socks2.png) ![Part7](/parts/shoes/shoes4.png) ![Part8](/parts/accessories/accessories4.png) ![Part9](/parts/nose/nose1.png)
 
 Ideas, create directories in 'parts' like example.
 
