@@ -21,7 +21,7 @@ This repository contains a real example of the workflow for:
 
 ## Usage
 
-Once dependencies are all installed, enter the <i> starsnft <\i> directory. 
+Once dependencies are all installed, enter the <i> starsnft </i> directory. 
 
 ### Step 1
 
