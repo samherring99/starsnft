@@ -21,9 +21,11 @@ This repository contains a real example of the workflow for:
 
 ## Usage
 
-Once dependencies are all installed, enter the <i> starsnft </i> directory. 
+Once dependencies are all installed, enter the <i> starsnft </i> directory with <i> cd starsnft </i> after cloning/forking. This is the main working directory for this project and is where all commands should be entered. Below are the steps for replicating this project.
 
-### Step 1
+### Step 1: Creating Attributes
+
+![Part1](/parts/bg/bg1.png) ![Part2](/parts/body/body3.png)
 
 Ideas, create directories in 'parts' like example.
 
