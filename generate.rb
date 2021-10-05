@@ -1,15 +1,26 @@
-require 'pixelart'     ## helper library for pixel art images (in .png)
+# Created by Sam Herring 2021
+
+# Import statements
+
+require 'fileutils'
+require 'pixelart'
 require 'json'
 
-## WHEN GENERATING -- add gender, percentage RARES, use this code! M/F 70/30
+FileUtils.mkdir_p 'gen'
+FileUtils.mkdir_p 'img'
+FileUtils.mkdir_p 'desc'
 
-total_num = 5000
+puts "\n--------------------------- Starting NFT Generation... ---------------------------\n"
 
-codeslist = []
+codeslist = [] # Empty variable to store combinations to prevent repetition.
+
+# Below are case-level booleans that are triggered if NON-required attributes are selected.
 
 hatbool = false
 socksbool = false
 accessoriesbool = false
+
+#  An empty dictionary with teh counts of each image part to calculate rarities.
 
 RARES = {
     gender: {male: 0, female: 0},
@@ -25,55 +36,64 @@ RARES = {
 }
 
 PARTS = {
+    # Background colors
   bg:  { required: true,
            attributes: [['Blue', 'u'],
                         ['Green', 'u'],
                         ['Orange', 'u'],
                         ['Purple', 'u'],
                         ['Red', 'u'],
-                        ['Yellow', 'u']] }, # ROY - 20%, BP - 15%, G - 10%
+                        ['Yellow', 'u']] },
+  # Body types
   body:  { required: true,
            attributes: [['Body 1', 'u'],
                         ['Body 2', 'u'],
                         ['Body 3', 'u'],
                         ['Body 4', 'u'],
-                        ['Body 5', 'u']] }, # All 20%
+                        ['Body 5', 'u']] },
+  # Types of shoes
   shoes:  { required: true,
       attributes: [['Black', 'u'],
                    ['AF1s', 'u'],
                    ['Checkered Vans', 'u'],
                    ['Red Converse', 'u'],
-                   ['Blue Converse', 'u']] }, # Black - 50%, Converse - 15%, Vans - 10%, AF1s - 5%
+                   ['Blue Converse', 'u']] },
+  #  Types of mouths
   mouth: { required: true,
            attributes: [['Black Smile',  'u'],
                         ['Black Open',    'u'],
                         ['Red Smile',           'f'],
                         ['Purple Smile',                'f'],
                         ['Tongue Out',     'u'],
-                        ['Zombie Mouth', 'm']] }, # Black Open - 40%, Black Smile - 35%, Lipstick - 20%, Tongue - 20%, Zombie Mouth - 5%
+                        ['Zombie Mouth', 'm']] },
+  #  Types of noses
   nose:  { required: true,
            attributes: [['Nose 1',          'u'],
                         ['Nose 2', 'u'],
                         ['Nose 3',  'u'],
-                        ['Nose 4', 'u']] }, # Nose 1 - 40%, Nose 2 - 30%,, Nose 3 - 20%, Nose 4 - 10%
+                        ['Nose 4', 'u']] },
+  # Types of eyes
   eyes:  { required: true,
            attributes: [['Eyes 1', 'u'],
                         ['Eyes 2', 'u'],
                         ['Eyes 3', 'u'],
                         ['Eyes 4', 'u'],
                         ['Eyes 5', 'u'],
-                        ['Eyes 6', 'u']] }, # Eyes 1 - 25%, Eyes 2 - 40%, Eyes3/4/5 - 30% Eyes 6 - 5%,
-  socks:  { required: false, # 60% Chance
+                        ['Eyes 6', 'u']] },
+  # Types of socks,  if wearing.
+  socks:  { required: false,
            attributes: [['Black Socks', 'u'],
                         ['White Socks', 'u'],
-                        ['Rainbow Socks', 'u']] },  # White - 55%, Black - 40%, Rainbow - 5%
+                        ['Rainbow Socks', 'u']] },
+  # Hat type, if wearing
   hat:  { required: false, # 40 % Chance
            attributes: [['Cowboy Hat', 'u'],
                         ['Red Cap', 'u'],
                         ['Blue Cap', 'u'],
                         ['Camp Cap', 'u'],
                         ['Wizard Hat', 'm'],
-                        ['Fez', 'm']] }, # Cap - 45%, Cowboy - 25%, Wizard - 15%, Fez - 10%, Supreme Cap -  5%
+                        ['Fez', 'm']] },
+  #  Type of accessory, if applicable.
   accessories:  { required: false, # 20% Chance
            attributes: [['Glasses',        'u'],
                         ['Sunglasses',      'u'],
@@ -81,51 +101,41 @@ PARTS = {
                         ['Earrings',     'f']] } # Glasses - 50%, Sunglasses - 40%, Earrings - 25%, Cigarette - 10%
 }
 
-def generate_punk( codes )
-  punk = Pixelart::Image.new( 56, 56 )
+# Main method to compose and generate an image.
 
+def generate_star( codes )
+    
+    # Create 56px by 56px blank image
+  star = Pixelart::Image.new( 56, 56 )
+
+    # Iterate through parts list, add codes with codes[index] > 0 (means that this Star has this attribute and indicates which type)
+    
   PARTS.each_with_index do |(key,part),i|
     code  = codes[i]
-    if code != 0    ## if code 0 - skip optional part
-
-      ## for debugging print attributes with names (size not 0, that is, "")
-      ##attribute = part[:attributes][code-1]
-      ##puts "#{key}#{code} - #{attribute[0]} (#{attribute[1]})"  if attribute[0].size > 0
-
-      ## compose parts on top (from face to accessoire)
-      #puts "#{code}"
-      tester = "./parts/#{key}/#{key}" + "#{code}" + ".png"
-      #puts tester
-      path = "./parts/#{key}/#{key}#{code}.png"
-      part = Pixelart::Image.read( tester )
-      punk.compose!( part )
+    if code != 0
+      path = "./parts/#{key}/#{key}" + "#{code}" + ".png" # Location of image part in directory
+      part = Pixelart::Image.read( path )
+      star.compose!( part )
     end
   end
-
-  punk
+  # Return the composed image at the end.
+  star
 end
 
-##codes = [2, 3, 1, 1, 1, 1, 1, 1, 3]
-##punk = generate_punk( codes )
-##name = "./gen/punk-" + "#{codes[0]}" + "#{codes[1]}" + ".png"
-##punk.save( name )
+# Defining range variable, current code array, and a global counter.
 
 totalrange = (1..500)
 counter=0
 codes=[0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-totaljson = {"tokens" => [], "metadata" => {"name" => "Starboys",
-    "description" => "Starboys are unique characters and are fun and cool and interesting.",
-    "image" => "https://gateway.pinata.cloud/ipfs/QmXWDbSAvbGRuwUEEpegRRbFGegoxdSeKBJVV5TbGX6W6y/star-11x6.png",
-    "external_link" => "https://google.com",
-    "seller_fee_basis_points" => 250,
-    "fee_recipient" => "0x66449A3015488DA72976DCff99C6A75Bf94aAfda"}}
+# Iterate through the range, capturinig current index.
 
 totalrange.each_with_index do |index|
-    #puts rand(index)
+    
+    # Initialzie attribute varables to empty/default.
     g_string = "Male"
     bg_index = 0
-    body_index = rand(5)
+    body_index = rand(5) #  Choose a random body type.
     shoes_index = 0
     mouth_index = 0
     nose_index = 0
@@ -133,6 +143,8 @@ totalrange.each_with_index do |index|
     socks_index = 0
     hat_index = 0
     accessories_index = 0
+    
+    #  Assign body type from random variable.
     
     if body_index == 0
         RARES[:body][:one] += 1
@@ -146,16 +158,17 @@ totalrange.each_with_index do |index|
         RARES[:body][:five] += 1
     end
     
+    # Generate gender and background variables.
+    
     gender = rand(10)
     bgvar = rand(100)
     
+    # Create background rarity with random choice inside.
     
     if bgvar < 10
-        # GREEN
         bg_index = 3
         RARES[:bg][:green] += 1
     elsif bgvar < 15
-        # Blue/Purple - random choice
         choice = rand(2)
         
         if choice == 0
@@ -166,7 +179,6 @@ totalrange.each_with_index do |index|
             RARES[:bg][:purple] += 1
         end
     else
-        # ROY random choice
         bg_index = rand(3)
         
         if bg_index == 0
@@ -179,9 +191,13 @@ totalrange.each_with_index do |index|
     
     end
     
-    if gender < 7 # Male
+    # Gender split: Male
+    
+    if gender < 7
         
         RARES[:gender][:male] += 1
+        
+        # Calculate variable to determine mouth type rarity.
 
         mvar = rand(100)
         
@@ -201,6 +217,8 @@ totalrange.each_with_index do |index|
             end
             
         end
+        
+        # Calculate variable to determine if wearing a hat, and if so, rarity.
         
         choicevar = rand(10)
         
@@ -233,6 +251,8 @@ totalrange.each_with_index do |index|
             end
         end
         
+        # Calculate variable to determine if star has accessory, and if so, rarity.
+        
         choicevar2 = rand(10)
         
         if choicevar2 < 2
@@ -250,11 +270,16 @@ totalrange.each_with_index do |index|
                 RARES[:accessories][:glasses] += 1
             end
         end
+        
+# Gender split: Female
+
     else
         mvar = rand(100)
         g_string = "Female"
         
         RARES[:gender][:female] += 1
+        
+        # Calculate variable to determine mouth type rarity.
         
         if mvar < 20
             mouth_index = 4
@@ -276,6 +301,8 @@ totalrange.each_with_index do |index|
                 RARES[:mouth][:purplelips] += 1
             end
         end
+        
+        # Calculate variable to determine if wearing a hat, and if so, rarity.
         
         choicevar = rand(10)
         
@@ -300,6 +327,8 @@ totalrange.each_with_index do |index|
             end
         end
         
+        # Calculate variable to determine if star has accessory, and if so, rarity.
+        
         choicevar2 = rand(10)
         avar = rand(100)
         
@@ -320,6 +349,11 @@ totalrange.each_with_index do |index|
             end
         end
     end
+    
+    # Above case statements capture gender differences in attribute types.
+    # The following case statements apply to ALL stars equally.
+    
+    # Calculate variable to determine type of shoes the Star has.
     
     shoesvar = rand(100)
     
@@ -343,6 +377,8 @@ totalrange.each_with_index do |index|
         shoes_index = 0
         RARES[:shoes][:black] += 1
     end
+    
+    # Calculate variable to determine type of nose the Star has.
         
     nosevar = rand(100)
     
@@ -359,19 +395,18 @@ totalrange.each_with_index do |index|
         nose_index = 0
         RARES[:nose][:one] += 1
     end
+    
+    # Calculate variable to determine type of eyes the Star has.
         
     eyesvar = rand(100)
     
     if eyesvar < 5
-        # 6
         eyes_index = 5
         RARES[:eyes][:six] += 1
     elsif eyesvar < 25
-        # 1
         eyes_index = 0
         RARES[:eyes][:one] += 1
     elsif eyesvar < 30
-        # 3/4/5
         eyes_index=3+rand(3)
         
         if eyes_index == 3
@@ -382,10 +417,11 @@ totalrange.each_with_index do |index|
             RARES[:eyes][:five] += 1
         end
     else
-        # 2
         eyes_index = 1
         RARES[:eyes][:two] += 1
     end
+    
+    # Calculate variable to determine if the Star is wearing socks, and if so, rarity.
 
     crand = rand(10)
 
@@ -404,21 +440,27 @@ totalrange.each_with_index do |index|
             RARES[:socks][:white] += 1
         end
     end
-        
+    
+    # Combine all indices of each attribute into current code array.
         
     codes = [bg_index+1, body_index+1, shoes_index+1, mouth_index+1, nose_index+1, eyes_index+1, socks_index, hat_index, accessories_index]
     
     if codeslist.include?(codes)
-        # Punk already made, continue
+        # Star already made, continue generating.
     else
-        punk = generate_punk( codes )
-        counter += 1
+        star = generate_star( codes ) # Generate star
+        counter += 1 # Increment Star index
+        
+        # Create image names
+        
         name = "./gen/star-" + "#{counter}" + ".png"
         zoomname = "./img/star-" + "#{counter}" + "x6.png"
         
+        # Dictionary to store token metadata in desc/
+        
         tempHash = {
             "id" => counter - 1,
-            "description" => "This star, Star #{counter}, is a unique Star in the set of 500 and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
+            "description" => "This star, Star #{counter}, is a unique Star and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
             "external_url" => "https://starsnft.herokuapp.com/",
             "image" => "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-#{counter}x6.png",
             "name" => "Star " + "#{counter}",
@@ -452,29 +494,44 @@ totalrange.each_with_index do |index|
                 "value" => PARTS[:shoes][:attributes][shoes_index][0]
             }]
         }
+        
+        # If star is wearing socks, add it to metadata dictionary.
             
         if socksbool
             tempHash["attributes"].append({"trait_type" => "Socks", "value" => PARTS[:socks][:attributes][socks_index-1][0]})
         end
         
+        # If star is wearing a hat, add it to metadata dictionary.
+        
         if hatbool
             tempHash["attributes"].append({"trait_type" => "Hat", "value" => PARTS[:hat][:attributes][hat_index-1][0]})
         end
+        
+        # If star has an accessory, add it to metadata dictionary.
             
         if accessoriesbool
             tempHash["attributes"].append({"trait_type" => "Accessories", "value" => PARTS[:accessories][:attributes][accessories_index-1][0]})
         end
         
+        # Open this Star's description JSON file, format the dictionary inside.
+        
         File.open("./desc/#{counter-1}.json","w") do |f|
           f.write(JSON.pretty_generate(tempHash))
         end
         
-        ##totaljson["tokens"].append(tempHash)
+        File.rename("./desc/#{counter-1}.json", "./desc/#{counter-1}")
         
-        puts "Star: " + "#{counter}" + " " + g_string + " " + PARTS[:bg][:attributes][bg_index][0] + " " + PARTS[:body][:attributes][body_index][0] + " " + PARTS[:mouth][:attributes][mouth_index][0] + " " + PARTS[:nose][:attributes][nose_index][0] + " " + PARTS[:eyes][:attributes][eyes_index][0] + " " + PARTS[:socks][:attributes][socks_index-1][0] + " " + PARTS[:hat][:attributes][hat_index-1][0] + " " + PARTS[:accessories][:attributes][accessories_index-1][0]
-        punk.save( name )
-        punk.zoom( 6 ).save( zoomname )
+        # Print star data to console for debug.
+        
+        puts "Generated Star: " + "#{counter}" + " with attributes: " + g_string + ", " + PARTS[:bg][:attributes][bg_index][0] + ", " + PARTS[:body][:attributes][body_index][0] + ", " + PARTS[:mouth][:attributes][mouth_index][0] + ", " + PARTS[:nose][:attributes][nose_index][0] + ", " + PARTS[:eyes][:attributes][eyes_index][0] + ", " + PARTS[:socks][:attributes][socks_index-1][0] + ", " + PARTS[:hat][:attributes][hat_index-1][0] + ", " + PARTS[:accessories][:attributes][accessories_index-1][0]
+        
+        # Save the generated star, its image at 6x, and add its code to the dictionary.
+        
+        star.save( name )
+        star.zoom( 6 ).save( zoomname )
         codeslist.append(codes)
+        
+        # Reset optional booleans, restart loop.
         
         hatbool = false
         socksbool = false
@@ -483,11 +540,24 @@ totalrange.each_with_index do |index|
     
 end
 
-File.open("./desc/test_set.json","w") do |f|
+# This dictionary is used to generate the metadata.json file, change parameters as needed.
+
+totaljson = {"name" => "Stars",
+    "description" => "There are #{counter} total Stars on the blockchain.",
+    "image" => "https://raw.githubusercontent.com/samherring99/starsnft/main/coverstar.png",
+    "external_link" => "https://google.com",
+    "seller_fee_basis_points" => 250,
+    "fee_recipient" => "0x66449A3015488DA72976DCff99C6A75Bf94aAfda"}
+
+# Write metadata file.
+
+File.open("./metadata.json","w") do |f|
   f.write(JSON.pretty_generate(totaljson))
 end
 
-puts RARES
+# Display rarities/counts of attributes for debug purposes.
+
+puts "\nRarities by Attribute: \n"
 
 puts "Gender: #{RARES[:gender][:male]} Male #{RARES[:gender][:female]} Female."
 puts "BG: #{RARES[:bg][:red]} Red #{RARES[:bg][:orange]} Orange #{RARES[:bg][:yellow]} Yellow #{RARES[:bg][:green]} Green #{RARES[:bg][:blue]} Blue #{RARES[:bg][:purple]} Purple"
@@ -496,41 +566,4 @@ puts "Socks: #{RARES[:socks][:white]} White #{RARES[:socks][:black]} Black  #{RA
 puts "Hat: #{RARES[:hat][:cowboy]} Cowboy #{RARES[:hat][:redcap]} Red Baseball Cap  #{RARES[:hat][:bluecap]} Blue Baseball Cap #{RARES[:hat][:supreme]} Supreme Cap #{RARES[:hat][:wizard]} Wizard Hat #{RARES[:hat][:fez]} Fez"
 puts "Accessories: #{RARES[:accessories][:glasses]} Glasses #{RARES[:accessories][:sunglasses]} Sunglasses #{RARES[:accessories][:cigarette]} Cigarette #{RARES[:accessories][:earrings]} Earrings "
 
-
-
-=begin
-bgrange = (1..5)
-bodyrange = (1..4)
-shoesrange = (1..4)
-mouthrange = (1..5)
-noserange = (1..3)
-eyesrange = (1..5)
-socksrange = (0..2)
-hatrange = (0..5)
-accessoriesrange = (0..3)
-
-bgrange.each_with_index do |bgkey,i|
-    bodyrange.each_with_index do |bkey,i|
-        shoesrange.each_with_index do |skey,i|
-            mouthrange.each_with_index do |mkey,i|
-                noserange.each_with_index do |nkey,i|
-                    eyesrange.each_with_index do |ekey,i|
-                        socksrange.each_with_index do |sokey,i|
-                            hatrange.each_with_index do |hkey,i|
-                                accessoriesrange.each_with_index do |akey,i|
-                                    codes = [bgkey, bkey, skey, mkey, nkey, ekey, sokey, hkey, akey]
-                                    punk = generate_punk( codes )
-                                    name = "./gen/star-" + "#{codes[0]}" + "#{codes[1]}" + "#{codes[2]}" + "#{codes[3]}" + "#{codes[4]}" +"#{codes[5]}" + "#{codes[6]}" + "#{codes[7]}" + "#{codes[8]}" + ".png"
-                                    puts "Generating " + name
-                                    punk.save( name )
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
-=end
-
+puts "\n--------------------------- Generated #{counter} Images! ---------------------------\n"
