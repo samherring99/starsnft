@@ -62,7 +62,21 @@ After you've finished, export all of your .png files to the 'parts' directory, w
 
 ### Step 2
 
-Generate
+Assuming that you've created your image assets and organized it accordingly (or are using the provided 'parts' directory), you can now generate your images!
+
+Execute the command <i> ruby generate.rb  </i>  in the main project directory and read the output for descriptions.
+
+![Star1](/images/star-12x6.png) ![Star2](/images/star-98x6.png)
+
+Above are some examples of generated stars in this Stars NFT Collection, specifically Star 12 and Star 98.
+
+After the Ruby program finished, you will be left with 3 folders:
+
+    - gen - This folder contains all PNG images from the set generated at 1x size (56 px by 56 px by default.)
+    - img - This folder contains all PNG images from the set generated at 6x size (336 px by 336 px by default.)
+    - descriptions - This folder contains all metadata descriptions in text files for each generated image.
+    
+Congratulations! You just generated your first set of NFT token images. In order to host them for access by the blockchain, publish them <b>here to your fork</b> or create a new repository.
 
 ### Step 3
 
