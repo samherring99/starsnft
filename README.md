@@ -2,6 +2,10 @@
 
 ![Cover](/coverimage.png)
 
+Stars NFT
+
+[Website](https://starsnft.herokuapp.com/) [Discord](https://discord.com/invite/pCEdUjqPtk)
+
 This repository contains a real example of the workflow for:
 
 1. Algorithmically generating a set of NFTs wiith tiered rarity structure.
@@ -66,22 +70,52 @@ Assuming that you've created your image assets and organized it accordingly (or 
 
 Execute the command <i> ruby generate.rb  </i>  in the main project directory and read the output for descriptions.
 
-![Star1](/images/star-12x6.png) ![Star2](/images/star-98x6.png)
+![Star2](/images/star-98x6.png) ![Star1](/images/star-121x6.png)
 
-Above are some examples of generated stars in this Stars NFT Collection, specifically Star 12 and Star 98.
+Above are some examples of generated stars in this Stars NFT Collection, specifically Star 98 and Star 121.
 
-After the Ruby program finished, you will be left with 3 folders:
+After the Ruby program finished, you will be left with 3 folders and a file:
 
-    - gen - This folder contains all PNG images from the set generated at 1x size (56 px by 56 px by default.)
-    - img - This folder contains all PNG images from the set generated at 6x size (336 px by 336 px by default.)
+    - gen - This folder contains all PNG images from the set generated at 1x size (56 px by 56 px by default).
+    - img - This folder contains all PNG images from the set generated at 6x size (336 px by 336 px by default).
     - descriptions - This folder contains all metadata descriptions in text files for each generated image.
+    - metadata.json - This file contains contract-level metadata info for the whole collection.
     
 Congratulations! You just generated your first set of NFT token images. In order to host them for access by the blockchain, publish them <b>here to your fork</b> or create a new repository.
 
 ### Step 3
 
-Change contract values, deploy contract on Remix
+Once your images are generated and uploaded, it's time to move to the blockchain!
+
+Make sure your <i> metadata.json </i> file is filled out with the correct parameters (name, description, image, and external_url are straightforward), namely your ETH wallet address to recieve royalties on sales, and the seller_basis_fee of 250, which corresponds to a 2.5% royalty fee deposited to your wallet for every transaction. All of these values can and should be changed as needed.
+
+Open the <i> SampleContract.sol </i> file in a text editor of your choice. For the simple, base ERC721 contract, only the constructor, baseURI(), and contractURI() methods need to be changed for deployment.
+
+Constructor: change the contract name and symbol to match what you want.
+baseURI(): change the return string to match the location of your hosted 'descriptions' folder.
+contractURI(): change the return string to match the location of your hosted 'metadata.json' file.
+
+### DEPLOYMENT
+
+REMIX:
+
+- Open up [Remix](https://remix.ethereum.org/) and import SampleContract.sol (or create your own there) in the first (highest) tab.
+- Once all the code and values in the contract file are set, navigate to the second tab down to compile it. Remix does have an auto-compile option, but just make sure that it's compiled anyways.
+- After compilation, you are ready for deployment!
+    - If you want to deploy to a testnet first, you'll need some test ETH. Head over to a Rinkeby or Ropsten faucet to get some ether to experiment with.
+    - If you want to deploy straight to mainnet, you'll need ~0.5 ETH in your wallet to cover gas fees for deployment and minting.
+- Move to the third tab on the page, select your environment as Injected Web3 (make sure you are on the correct network in Metamask!), select your contract file,  and press <i> Deploy </i>.
+- After confirming with Metamask, your deployed contract and its methods should appear under the 'Deployment' section.
+- Click the 'safeMint' button in <i> red </i> to mint your first NFT!
+- If you made it to this step with no issues, you've just deployed your first smart contract and minted your first NFT!
+- Visit https://testnets.opensea.io/assets/CONTRACT_ADDRESS/0 for Rinkeby/Ropsten or https://opensea.io/assets/CONTRACT_ADDRESS/0 for Mainnet to view your NFT.
+
+Truffle:
+
+- [Truffle Deployment and Minting Tutorial](https://forum.openzeppelin.com/t/create-an-nft-and-deploy-to-a-public-testnet-using-truffle/2961)
+
+Happy creating!
 
 ## DISCLAIMER
 
-Something about money and NFTs and blockchain etc.
+This project, in potentally involving the real Ethereum mainnet blockchain, DOES involve real finances if you choose to do so. This repository was created solely for educatoinal purposes, and its creators take  financial responsibility over money YOU put in to the blockchain for NFT projects. Do your own research, always be aware of what you're clicking and agreeing to on any site, and invest your money wisely.
