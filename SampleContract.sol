@@ -22,10 +22,7 @@ contract YourContract is ERC721, Ownable {
     }
     
     function safeMint() public payable {
-        //require(isSaleActive, "Sale is currently not active");
         require(471 > _tokenIds.current() + 1, "Not enough tokens left to buy.");
-        //require(_amount > 0 && _amount < MAX_TOKENS_PER_SALE + 1, "Amount of tokens exceeds amount of tokens you can purchase in a single purchase.");
-        //require(msg.value >= price, "Amount of ether sent not correct.");
         
         _safeMint(msg.sender, _tokenIds.current());
         _tokenIds.increment();
