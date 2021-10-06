@@ -22,6 +22,7 @@ This repository contains a real example of the workflow for:
 - [Ruby](https://www.ruby-lang.org/en/)
 - [GIMP](https://www.gimp.org/), [Photoshop](https://www.adobe.com/products/photoshop.html), or some any PNG photo editing program.
 - [Remix](https://remix.ethereum.org/)(Online), or [Truffle](https://www.trufflesuite.com/truffle)(CLI) for deployment and minting.
+- [MetaMask](https://metamask.io/)
 
 ## Notes Before Using This Code
 -  If you want to create AND HOST your own NFT set here using this code: FORK THIS REPOSITORY.
