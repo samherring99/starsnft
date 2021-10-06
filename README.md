@@ -1,8 +1,8 @@
-# Stars NFT Generation and Data Hosting
+# Stars NFT Generation, Data Hosting and Smart Contract Creation
 
 ![Cover](/coverimage.png)
 
-Stars NFT
+This page serves as the home for the [Stars NFT Project](https://testnets.opensea.io/collection/stars-s9zeade5qc).
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ Get one [here](https://starsnft.herokuapp.com/),  or check out the [Discord](htt
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-This repository contains a real example of the workflow for:
+This repository also contains a real example of the workflow for:
 
 1. Algorithmically generating a set of NFTs wiith tiered rarity structure.
 
