@@ -4,7 +4,7 @@
 
 Stars NFT
 
-[Website](https://starsnft.herokuapp.com/) [Discord](https://discord.com/invite/pCEdUjqPtk)
+Get one [here](https://starsnft.herokuapp.com/),  or check out the [Discord](https://discord.com/invite/pCEdUjqPtk) to join the Stars community!
 
 This repository contains a real example of the workflow for:
 

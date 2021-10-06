@@ -8,7 +8,7 @@ require 'json'
 
 FileUtils.mkdir_p 'gen'
 FileUtils.mkdir_p 'img'
-FileUtils.mkdir_p 'desc'
+FileUtils.mkdir_p 'descriptions'
 
 puts "\n--------------------------- Starting NFT Generation... ---------------------------\n"
 
@@ -20,7 +20,7 @@ hatbool = false
 socksbool = false
 accessoriesbool = false
 
-#  An empty dictionary with teh counts of each image part to calculate rarities.
+#  An empty dictionary with the counts of each image part to calculate rarities.
 
 RARES = {
     gender: {male: 0, female: 0},
@@ -456,7 +456,7 @@ totalrange.each_with_index do |index|
         name = "./gen/star-" + "#{counter}" + ".png"
         zoomname = "./img/star-" + "#{counter}" + "x6.png"
         
-        # Dictionary to store token metadata in desc/
+        # Dictionary to store token metadata in descriptions/
         
         tempHash = {
             "id" => counter - 1,
@@ -515,11 +515,11 @@ totalrange.each_with_index do |index|
         
         # Open this Star's description JSON file, format the dictionary inside.
         
-        File.open("./desc/#{counter-1}.json","w") do |f|
+        File.open("./descriptions/#{counter-1}.json","w") do |f|
           f.write(JSON.pretty_generate(tempHash))
         end
         
-        File.rename("./desc/#{counter-1}.json", "./desc/#{counter-1}")
+        File.rename("./descriptions/#{counter-1}.json", "./descriptions/#{counter-1}")
         
         # Print star data to console for debug.
         
