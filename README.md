@@ -113,8 +113,8 @@ REMIX:
     - If you want to deploy straight to mainnet, you'll need ~0.5 ETH in your MetaMask wallet to cover gas fees for deployment and minting.
 - Move to the third tab on the page, select your environment as Injected Web3 (make sure you are on the correct network in Metamask!), select your contract file, and press <i> Deploy</i>.
 - After confirming with Metamask, your deployed contract and its methods should appear under the 'Deployment' section.
-- Click the 'safeMint' button in <i> red </i> to mint your first NFT!
-- If you made it to this step with no issues, you've just deployed your first smart contract and minted your first NFT!
+- Click the 'safeMint' button in <i> red </i> to mint your first token.
+- If you made it to this step with no issues, you've just deployed your first smart contract and minted your first NFT on the blockchain!
 - Visit https://testnets.opensea.io/assets/CONTRACT_ADDRESS/0 for Rinkeby/Ropsten or https://opensea.io/assets/CONTRACT_ADDRESS/0 for Mainnet to view your NFT.
 
 Truffle:
