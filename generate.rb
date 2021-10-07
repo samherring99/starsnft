@@ -10,6 +10,11 @@ FileUtils.mkdir_p 'gen'
 FileUtils.mkdir_p 'img'
 FileUtils.mkdir_p 'descriptions'
 
+# CHANGE THESE BELOW TO MATCH YOUR REPOSITORY
+
+GITHUB_USER = 'samherring99'
+REPOSITORY_NAME = 'starsnft'
+
 puts "\n--------------------------- Starting NFT Generation... ---------------------------\n"
 
 codeslist = [] # Empty variable to store combinations to prevent repetition.
@@ -451,18 +456,18 @@ totalrange.each_with_index do |index|
         star = generate_star( codes ) # Generate star
         counter += 1 # Increment Star index
         
-        # Create image names
+        # Create image names [CHANGE TO FIT YOUR NEEDS]
         
         name = "./gen/star-" + "#{counter}" + ".png"
         zoomname = "./img/star-" + "#{counter}" + "x6.png"
         
-        # Dictionary to store token metadata in descriptions/
+        # Dictionary to store token metadata in descriptions [EDIT THIS AS NEEDED]
         
         tempHash = {
             "id" => counter - 1,
             "description" => "This star, Star #{counter}, is a unique Star and is sure to be a digital avatar that will make you feel like a Star for a lifetime.",
             "external_url" => "https://starsnft.herokuapp.com/",
-            "image" => "https://raw.githubusercontent.com/samherring99/starsnft/main/images/star-#{counter}x6.png",
+            "image" => "https://raw.githubusercontent.com/#{GITHUB_USER}/#{REPOSITORY_NAME}/master/img/star-#{counter}x6.png",
             "name" => "Star " + "#{counter}",
             "attributes" => [
             {

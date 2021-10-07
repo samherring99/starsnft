@@ -12,7 +12,7 @@ Get one [here](https://starsnft.herokuapp.com/),  or check out the [Discord](htt
 
 This repository also contains a real example of the workflow for:
 
-1. Algorithmically generating a set of NFTs wiith tiered rarity structure.
+1. Algorithmically generating a set of NFTs with tiered rarity structure.
 
 2. Hosting the image and metadata for the generated NFT set on Github.
 
@@ -100,6 +100,8 @@ Constructor: change the contract name and symbol to match what you want.
 baseURI(): change the return string to match the location of your hosted 'descriptions' folder.
 contractURI(): change the return string to match the location of your hosted 'metadata.json' file.
 
+If you want to add any other complexity or methods to your contract, now would be the time to do it. You can also create any other type of Solidity smart contract of your choice and use that with this repository as well. Just be sure to change the correct baseURI and contractURI values when appropriate.
+
 ### DEPLOYMENT
 
 REMIX:
@@ -109,7 +111,7 @@ REMIX:
 - After compilation, you are ready for deployment!
     - If you want to deploy to a testnet first, you'll need some test ETH. Head over to a Rinkeby or Ropsten faucet to get some ether to experiment with.
     - If you want to deploy straight to mainnet, you'll need ~0.5 ETH in your wallet to cover gas fees for deployment and minting.
-- Move to the third tab on the page, select your environment as Injected Web3 (make sure you are on the correct network in Metamask!), select your contract file,  and press <i> Deploy </i>.
+- Move to the third tab on the page, select your environment as Injected Web3 (make sure you are on the correct network in Metamask!), select your contract file, and press <i> Deploy</i>.
 - After confirming with Metamask, your deployed contract and its methods should appear under the 'Deployment' section.
 - Click the 'safeMint' button in <i> red </i> to mint your first NFT!
 - If you made it to this step with no issues, you've just deployed your first smart contract and minted your first NFT!
@@ -123,4 +125,4 @@ Happy creating!
 
 ## DISCLAIMER
 
-This project, in potentally involving the real Ethereum mainnet blockchain, DOES involve real finances if you choose to do so. This repository was created solely for educatoinal purposes, and its creators take  financial responsibility over money YOU put in to the blockchain for NFT projects. Do your own research, always be aware of what you're clicking and agreeing to on any site, and invest your money wisely.
+This project, in potentally involving the real Ethereum mainnet blockchain, DOES involve real finances if you choose to do so. This repository was created solely for educatoinal purposes, and its creators take zero financial responsibility over money YOU put in to the blockchain for NFT projects, or any financial harm caused to any individual by any projects you release with this code. Do your own research, always be aware of what you're clicking and agreeing to on any website, and invest your money wisely.

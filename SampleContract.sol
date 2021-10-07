@@ -12,7 +12,7 @@ contract YourContract is ERC721, Ownable {
     constructor() ERC721("Name", "SYMBOL") {}
     
     function baseURI() public override view virtual returns (string memory) {
-        return "https://raw.githubusercontent.com/GITHUB_USER/GITHUB_REPO/master/desc/";
+        return "https://raw.githubusercontent.com/GITHUB_USER/GITHUB_REPO/master/descriptions/";
     }
     
     function contractURI() public view virtual returns (string memory) {
