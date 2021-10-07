@@ -92,7 +92,7 @@ Congratulations! You just generated your first set of NFT token images. In order
 
 Once your images are generated and uploaded, it's time to move to the blockchain!
 
-Make sure your <i> metadata.json </i> file is filled out with the correct parameters (name, description, image, and external_url are straightforward), namely your ETH wallet address to recieve royalties on sales, and the seller_basis_fee of 250, which corresponds to a 2.5% royalty fee deposited to your wallet for every transaction. All of these values can and should be changed as needed.
+Make sure your <i> metadata.json </i> file is filled out with the correct parameters (name, description, image, and external_url are straightforward), namely your MetaMask wallet address to recieve royalties on sales, and the seller_basis_fee of 250, which corresponds to a 2.5% royalty fee deposited to your wallet for every transaction. All of these values can and should be changed as needed.
 
 Open the <i> SampleContract.sol </i> file in a text editor of your choice. For the simple, base ERC721 contract, only the constructor, baseURI(), and contractURI() methods need to be changed for deployment.
 
@@ -110,7 +110,7 @@ REMIX:
 - Once all the code and values in the contract file are set, navigate to the second tab down to compile it. Remix does have an auto-compile option, but just make sure that it's compiled anyways.
 - After compilation, you are ready for deployment!
     - If you want to deploy to a testnet first, you'll need some test ETH. Head over to a Rinkeby or Ropsten faucet to get some ether to experiment with.
-    - If you want to deploy straight to mainnet, you'll need ~0.5 ETH in your wallet to cover gas fees for deployment and minting.
+    - If you want to deploy straight to mainnet, you'll need ~0.5 ETH in your MetaMask wallet to cover gas fees for deployment and minting.
 - Move to the third tab on the page, select your environment as Injected Web3 (make sure you are on the correct network in Metamask!), select your contract file, and press <i> Deploy</i>.
 - After confirming with Metamask, your deployed contract and its methods should appear under the 'Deployment' section.
 - Click the 'safeMint' button in <i> red </i> to mint your first NFT!

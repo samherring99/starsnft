@@ -547,12 +547,12 @@ end
 
 # This dictionary is used to generate the metadata.json file, change parameters as needed.
 
-totaljson = {"name" => "Stars",
-    "description" => "There are #{counter} total Stars on the blockchain.",
-    "image" => "https://raw.githubusercontent.com/samherring99/starsnft/main/coverstar.png",
-    "external_link" => "https://google.com",
+totaljson = {"name" => "SAMPLE",
+    "description" => "This is an example description for a Collection.",
+    "image" => "LINK_TO_COVER_IMAGE",
+    "external_link" => "EXTERNAL_WEBSITE_LINK",
     "seller_fee_basis_points" => 250,
-    "fee_recipient" => "0x66449A3015488DA72976DCff99C6A75Bf94aAfda"}
+    "fee_recipient" => "YOUR_METAMASK_WALLET"}
 
 # Write metadata file.
 
